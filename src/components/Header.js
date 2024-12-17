@@ -12,6 +12,7 @@ const Header = () => {
 
     const searchCache=useSelector((store)=>store.search);
     useEffect(()=>{
+        //if the 
         const timer=setTimeout(()=>{
             if(searchCache[searchQuery])
             {
