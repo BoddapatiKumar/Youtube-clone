@@ -1,3 +1,4 @@
+//Dummy data for comment section
 const commentsData=[{
     name:"Kumar",
     text:"wdiniewbdikbewsjbfebuerjnheilkerds",
@@ -44,17 +45,12 @@ const commentsData=[{
     text:"wdiniewbdikbewsjbfebuerjnheilkerds",
     replies:[],
 },
-{
-    name:"Kumar",
-    text:"wdiniewbdikbewsjbfebuerjnheilkerds",
-    replies:[],
-}
 ];
 //mapping over commentData
 const CommentList=({comments})=>{
     return comments.map((comment,index)=>(
-        <div>
-        <Comment key={index} data={comment}/>
+        <div key={index} >
+        <Comment data={comment}/>
         <div className="pl-5 ml-5 border border-l-black">
             <CommentList comments={comment.replies}/>
         </div>
