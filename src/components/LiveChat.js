@@ -8,6 +8,7 @@ const LiveChat = () => {
   const [liveMessage,setLiveMessage]=useState("");
   const dispatch=useDispatch();
 
+  //subscribe to the store
   const ChatMessages=useSelector((store)=>store.chat.messages);
 
   //api polling 
@@ -34,7 +35,17 @@ const LiveChat = () => {
      
       </div>
 
-      <div className="w-full p-2 ml-2 border border-black">
+      <form 
+        className="w-full p-2 ml-2 border border-black"
+        onSubmit={(e)=>{
+          e.preventDefault();
+          dispatch(addMessage({
+            name:"Kumar",
+            message:liveMessage,
+          }))
+          setLiveMessage("");
+        }}    
+      >
         <input 
           className="w-80 px-2" 
           value={liveMessage}
@@ -44,7 +55,7 @@ const LiveChat = () => {
           type="text">
         </input>
         <button className="px-2 mx-2 bg-green-100 rounded-lg">send</button>
-      </div>
+      </form>
     </>
   )
 }
