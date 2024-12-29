@@ -7,6 +7,7 @@ const chatSlice=createSlice({
     },
     reducers:{
         addMessage:(state,action)=>{
+            //after every 25 messages we will delete one message
             state.messages.splice(25,1)
             state.messages.unshift(action.payload);
         }

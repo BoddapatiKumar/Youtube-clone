@@ -7,7 +7,9 @@ import { cacheResults } from "../Utils/searchSlice";
 const Header = () => {
    
     const[searchQuery,setSearchQuery]=useState();
+
     const[suggestions,setSuggestions]=useState([]);
+    
     const[showSuggestions,setShowSuggestions]=useState(false);
 
     const searchCache=useSelector((store)=>store.search);
