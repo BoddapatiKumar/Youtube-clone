@@ -8,13 +8,13 @@ const LiveChat = () => {
   const [liveMessage,setLiveMessage]=useState("");
   const dispatch=useDispatch();
 
-  //subscribe to the store
+  //subscribe to the store and access the messages
   const ChatMessages=useSelector((store)=>store.chat.messages);
 
-  //api polling 
+  //api polling  for live chat
   useEffect(()=>{
+    //for every 2 sec  new message is added to live chat
     const i=setInterval(() => {
-      //api polling
       dispatch(addMessage({
         name:generateRandomName(),
         message:"Working on liveChat !",
